@@ -17,9 +17,7 @@ public class WordFrequencyGame {
 
             try {
                 ArrayList<WordInfo> wordInfos = getWordFrequency(sentence);
-
                 wordInfos.sort((firstWordInfo, secondWordInfo) -> secondWordInfo.getWordCount() - firstWordInfo.getWordCount());
-
                 return generateWordFrequencyGame(wordInfos);
             } catch (Exception e) {
                 return CALCULATE_ERROR;
@@ -44,21 +42,5 @@ public class WordFrequencyGame {
             joiner.add(s);
         }
         return joiner.toString();
-    }
-
-    private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
-        Map<String, List<WordInfo>> map = new HashMap<>();
-        for (WordInfo wordInfo : wordInfoList){
-//       map.computeIfAbsent(input.getValue(), k -> new ArrayList<>()).add(input);
-            if (!map.containsKey(wordInfo.getValue())) {
-                ArrayList arr = new ArrayList<>();
-                arr.add(wordInfo);
-                map.put(wordInfo.getValue(), arr);
-            }
-            else {
-                map.get(wordInfo.getValue()).add(wordInfo);
-            }
-        }
-        return map;
     }
 }
