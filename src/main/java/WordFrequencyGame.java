@@ -8,13 +8,6 @@ public class WordFrequencyGame {
     private static final String SPACE_STRING = " ";
 
     public String getResult(String sentence) {
-
-
-
-        if (sentence.split(SPACE_PATTERN).length==1) {
-            return sentence + " 1";
-        } else {
-
             try {
                 ArrayList<WordInfo> wordInfos = getWordFrequency(sentence);
                 wordInfos.sort((firstWordInfo, secondWordInfo) -> secondWordInfo.getWordCount() - firstWordInfo.getWordCount());
@@ -22,7 +15,6 @@ public class WordFrequencyGame {
             } catch (Exception e) {
                 return CALCULATE_ERROR;
             }
-        }
     }
 
     private ArrayList<WordInfo> getWordFrequency(String sentence){
