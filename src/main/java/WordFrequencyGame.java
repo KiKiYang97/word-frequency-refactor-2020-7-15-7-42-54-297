@@ -22,10 +22,10 @@ public class WordFrequencyGame {
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] arr = sentence.split(SPACE_PATTERN);
+                String[] words = sentence.split(SPACE_PATTERN);
 
                 List<WordInfo> wordInfoList = new ArrayList<>();
-                for (String s : arr) {
+                for (String s : words) {
                     WordInfo wordInfo = new WordInfo(s, 1);
                     wordInfoList.add(wordInfo);
                 }
